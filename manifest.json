@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "DataLayer Monitor",
+  "version": "1.0",
+  "description": "Logs all dataLayer.push and gtag() events to the console for debugging purposes.",
+  "author": "David Bethlen",
+  "homepage_url": "https://github.com/amlozek/Firefox-dataLayer-Monitor",
+  "permissions": ["activeTab"],
+  "icons": {
+    "16": "icons/gtm-magnifying-glass-16.png",
+    "48": "icons/gtm-magnifying-glass-48.png",
+    "128": "icons/gtm-magnifying-glass-128.png"
+  },
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "datalayer-monitor@example.com",
+      "strict_min_version": "91.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+    "web_accessible_resources": ["icons/gtm-magnifying-glass-48.png"]
+}
